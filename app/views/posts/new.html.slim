@@ -1,14 +1,7 @@
-h1 タスクの新規登録
+h1 投稿画面
 
 .nav.d-flex.justify-content-end
   = link_to'一覧',posts_path, class: 'nav-link'
 
- 
-=form_with model: @post, local: true do |f|
-  .form-group
-   = f.label :name
-   = f.text_field :name,class: 'form-contorol',id:'post_name'
-  .form-group
-    = f.label :description
-    = f.text_area :description, rows: 5, class: 'form-contorol', id: 'post_description'
-  = f.submit nil,class: 'btn btn-primary'
+
+=render partial: 'form', locals: { post: @post }

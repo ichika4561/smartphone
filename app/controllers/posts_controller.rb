@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
   def index
+    @posts= Post.all
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
     @post = Post.new
+
   end
 
   def edit
@@ -15,7 +18,7 @@ class PostsController < ApplicationController
   def create
     post = Post.new(post_params)
     post.save!
-    redirect_to posts_url, notise: "投稿「#{post.name}」を登録しました。"
+    redirect_to posts_url, notice: "投稿「#{post.name}」を登録しました。"
   end
 
   private

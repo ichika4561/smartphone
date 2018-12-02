@@ -13,7 +13,7 @@ html
         |  SmartPhone 
         div
           .container
-            -if flash.notice.present?
+            - if flash.notice.present?
               .alert.alert-success= flash.notice
             = yield
             
