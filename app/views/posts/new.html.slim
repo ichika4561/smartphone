@@ -1,2 +1,13 @@
-h1 Task#new
-p Find me in app/views/task/new.html.slim
+h1 タスクの新規登録
+
+.nav.justify-content-end
+ = link_to'一覧',posts_path, class: 'nav-link'
+ 
+=form_with model: @task, local: true do |f|
+ .form-group
+  = f.label :name
+  = f.post_field :name,class: 'form-contorol',id:'post_name'
+ .form-group
+  = f.label :description
+  = f.post_area :description, rows: 5, class: 'form-contorol', id: 'post_description'
+ =f.submit nil,class: 'btn btn-primary'
