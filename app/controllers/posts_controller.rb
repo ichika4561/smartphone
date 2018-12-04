@@ -15,16 +15,28 @@ class PostsController < ApplicationController
   def edit
   end
   
+  def updated_at
+    post = Post.find(params[:id])
+    post.update!(pask_params)
+    redirect_to tasks_url, notice:"投稿「#{post.name}」を更新しました。"
+  end
+  
+  def destroy
+   post = Post.find(params[:id])
+   post.destroy
+   redirect_to posts_url, notice:"投稿「#{post.name}」を削除しました。"
+  end  
+  
   def create
     post = Post.new(post_params)
     post.save!
     redirect_to posts_url, notice: "投稿「#{post.name}」を登録しました。"
   end
-
+  
   private
-
+  
   def post_params
     params.require(:post).permit(:name, :description)
   end
-
+  
 end
