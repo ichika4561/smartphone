@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   def updated_at
     post = Post.find(params[:id])
     post.update!(pask_params)
-    redirect_to tasks_url, notice:"投稿「#{post.name}」を更新しました。"
+    redirect_to posts_url, notice:"投稿「#{post.name}」を更新しました。"
   end
   
   def destroy
