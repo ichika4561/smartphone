@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SettionsControllerTest < ActionDispatch::IntegrationTest
+class SessionsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
     get settions_new_url
     assert_response :success
