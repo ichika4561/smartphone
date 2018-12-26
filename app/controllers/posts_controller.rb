@@ -13,11 +13,12 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
   
-  def updated_at
-    post = current_user.posts.find(params[:id]) 
-    post.update!(pask_params)
+  def update
+    post = Post.find(params[:id])
+    post.update!(post_params)
     redirect_to posts_url, notice:"投稿「#{post.name}」を更新しました。"
   end
   
