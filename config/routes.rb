@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   post'/login',to: 'sessions#create'
   delete'/logout',to: 'sessions#destroy'
   root to: 'top#show'
-   
+
+
+  #ログイン後にはsessions#new
  #root to: 'posts#index'
  #↑トップ画面に行ったら自動的に投稿一覧に飛ぶ設定。
  resources :posts
