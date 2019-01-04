@@ -1,5 +1,9 @@
-h1 投稿一覧
-=link_to'新規登録',new_post_path,class:'btn btn-primary'
+h1 一覧
+=link_to'新規登録',new_post_path,class:'btn btn-primary mb-3'
+
+.mb-3
+  = paginate @posts
+  = page_entries_info @posts
 
 .mb-3
 table.table.table-hover

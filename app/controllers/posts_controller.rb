@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @posts = current_user.posts
+    @posts = @q.result(distinct: true).page(params[:page])
   end
 
   def show
