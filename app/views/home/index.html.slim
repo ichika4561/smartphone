@@ -1,11 +1,21 @@
+
 section#top
   .container
-   .row
-    .col-lg-12.text-center
-     h1.section-heading Person_log
-     p what kind of he or she
-     hr.my-4/
-
+    .row
+      .col-lg-12.text-center
+        h1.section-heading Person_log
+        p what kind of he or she
+        hr.my-4/
+ul
+  - if user_signed_in?
+    li= current_user.email
+    li= current_user.name
+    li= current_user.nickname
+    li= current_user.image
+    li= current_user.location
+    li= link_to "ログアウト", destroy_user_session_path, method: :delete
+  - else
+    li= link_to "ログイン", new_user_session_path
 
 section#contact.bg-dark.text-white.section-top
   .container
@@ -23,5 +33,3 @@ section#contact.bg-dark.text-white.section-top
         p.mb-5 お問い合わせはTwitterのDMからお気軽に！
 
 footer.footer
-
-
