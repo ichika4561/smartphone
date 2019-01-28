@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get 'top/show'
   namespace :admin do
     resources :users
