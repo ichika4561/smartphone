@@ -1,3 +1,11 @@
+
+section#top
+  .container
+    .row
+      .col-lg-12.text-center
+        h1.section-heading Person_log
+        p what kind of he or she
+        hr.my-4/
 ul
   - if user_signed_in?
     li= current_user.email
@@ -8,3 +16,20 @@ ul
     li= link_to "ログアウト", destroy_user_session_path, method: :delete
   - else
     li= link_to "ログイン", new_user_session_path
+
+section#contact.bg-dark.text-white.section-top
+  .container
+    .row
+      .col-lg-8.mx-auto.text-center
+        h2.section-heading お問い合わせ
+        hr.my-4/
+    .row
+      .col-lg-12.mr-auto.text-center
+        a data-show-count="false" href="https://twitter.com/share?url=https://www.escola-pro.com&hashtags=[なんだろ]" target="_blank"
+          i.fab.fa-twitter.fa-3x.mb-3
+          i.fa.fa-envelope-o.fa-3x.mb-3.sr-contact
+        p
+          a href="https://twitter.com/ichika4561?lang=ja" target="_blank"  person_log 公式アカウント
+        p.mb-5 お問い合わせはTwitterのDMからお気軽に！
+
+footer.footer
